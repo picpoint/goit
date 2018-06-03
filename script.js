@@ -13,6 +13,7 @@ if (year == 2015) {
 */
 
 
+
 /*
 Задание 2
 Используя конструкцию if..else, напишите код, который будет спрашивать: 'Введите любое целое число?'
@@ -28,6 +29,7 @@ if (number > 0) {
 	alert(0);
 }
 */
+
 
 
 /*
@@ -55,6 +57,7 @@ if (login == null) {
 */
 
 
+
 /*
 Задание 4
 Перепишите if с использованием оператора '?':
@@ -65,6 +68,13 @@ if (a + b >= 3) {
 } else {
 	result = 'Noup!';
 }
+*/
+/*
+var a = +prompt('Введите а = ', '');
+var b = +prompt('Введите b = ', '');
+var sum = a + b;
+var result = (sum >=3) ? 'Yep!' : 'Noup!';
+alert(result);
 */
 
 
@@ -84,9 +94,53 @@ if (name == 'admin') {
 	text = '';
 }
 */
+/*
+var name = prompt('Введите логин', '');
+var result = (name === 'admin') ? 'Hi':
+						 (name === 'manager') ? 'Hello' :
+						 (name === '') ? 'No login' :
+						 'Empty';
+alert(result);
+*/
+
+
+
 
 /*
 Задания под звёздочкой
 1. http://www.codewars.com/kata/convert-a-number-to-a-string/
+We need a function that can transform a number into a string.
+Нам нужна функция, которая может преобразовать число в строку.
+
+Способ 1
+function numberToString(num) {
+  return String(num);
+}
+
+Способ 2
+function numberToString(num) {
+  return num + '';
+}
+*/
+
+
+/*
 2. http://www.codewars.com/kata/convert-a-string-to-a-number/
+We need a function that can transform a string into a number. What ways of achieving this do you know?
+Нам нужна функция, которая может преобразовать строку в число. Какие способы достижения этого вы знаете?
+
+Исходный код:
+var stringToNumber = function(str){
+  return null;
+}
+
+Способ 1
+var stringToNumber = function(str){
+  return +str;
+}
+
+Способ 2
+var stringToNumber = function(str){
+  return Number(str);
+}
 */
