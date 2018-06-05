@@ -1,5 +1,6 @@
 /*
 Домашнее задание. JS. Урок 3.
+
 Задание 1 (Повторять цикл, пока ввод неверен)
 Напишите цикл, который предлагает prompt ввести число, большее 100. Если посетитель ввел другое число — попросить ввести еще раз, и так далее.
 Цикл должен спрашивать число пока либо посетитель не введет число, большее 100, либо не нажмет кнопку Cancel (ESC).
@@ -69,20 +70,24 @@ for (var i = 1; i <= 100; i++) {
 # # # #
 Когда справитесь, сделайте размер доски переменным, чтобы можно было создавать доски любого размера.
 */
-var str = '', result;
-for (var j = 1; j <= 4; j++) {
+/*
+var str = '', count_start = 1;
+var box = +prompt('Введите количество клеток', '10');
+var count = +prompt('Введите количество строк', '10');
 
-	for (var i = 1; i <= 8; i++) {
+	for (var i = 1; i <= box; i++) {
 		if (i % 2 == 0) {
-			str += '#';
+			str += '_';
 		} else {
-			str += ' ';
+			str += '#';
 		}
 	}
-	console.log(str + '\n');
 
-}
-
+	do {
+		console.log(str);
+		count_start++;
+	} while (count_start != count)
+*/
 
 
 
@@ -92,14 +97,130 @@ for (var j = 1; j <= 4; j++) {
 pow(3, 2) = 3 * 3 = 9
 pow(1, 100) = 1 * 1 * ...* 1 = 1
 */
+/*
+function pow(x, n) {
+	var result = 1;
+	for (var i = 1; i <= n; i++) {
+		result = result * x;
+	}
+	return result;
+}
+
+console.log(pow(3, 5));
+console.log(pow(7, 3));
+console.log(pow(2, 5));
+*/
+
+
+
 
 /*
 Codewars
 Регистрируемся на codewars
 Выполняем задачки:
-		1.	even-or-odd
+
+
+1.	even-or-odd
+Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+Создайте функцию, которая принимает целое число как аргумент и возвращает «Четное» для четных чисел или «Нечетное» для нечетных чисел.
+function even_or_odd(number) {
+  if (number % 2 == 0) {
+    return 'Even';
+  } else {
+    return 'Odd';
+  }
+}
+
+console.log(even_or_odd(2));
+
+
+
+
 2.	jennys-secret-message
+Jenny has written a function that returns a greeting for a user. However, she's in love with Johnny, and would like to greet him slightly different. She added a special case to her function, but she made a mistake.
+Дженни написала функцию, которая возвращает приветствие для пользователя. Тем не менее, она влюблена в Джонни и хотела бы поприветствовать его немного иначе. Она добавила к ней особый случай, но она допустила ошибку.
+
+Исходный код:
+ function greet(name){
+  return "Hello, " + name + "!";
+  if(name === "Johnny")
+    return "Hello, my love!";
+}
+
+Решение:
+function greet(name) {
+  if(name === "Johnny") {
+    return "Hello, my love!";
+  }
+    return "Hello, " + name + "!";
+}
+
+
+
+
 3.	return-negative
+In this simple assignment you are given a number and have to make it negative. But maybe the number is already
+В этом простом задании вам присваивается номер и он должен быть отрицательным. Но, может быть, число уже отрицательно?
+
+Исходный код
+function makeNegative(num) {
+  // Code?
+}
+
+Решение
+function makeNegative(num) {
+  if(num < 0) {
+    return num;
+  } else {
+    num = '-' + num;
+    return +num;
+  }
+
+}
+
+
+
+
 4.	opposites-attract
+Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+
+Тимми и Сара думают, что они влюблены, но где они живут, они узнают только, как только они соберут цветок. Если у одного из цветов есть четное число лепестков, а у другого есть нечетное количество лепестков, значит, они влюблены.
+Напишите функцию, которая будет принимать количество лепестков каждого цветка и вернется, если они влюблены и ложны, если они не являются.
+
+Исходный код
+function lovefunc(flower1, flower2){
+  // moment of truth
+}
+
+Решение
+function lovefunc(flower1, flower2){
+  var result = flower1 + flower2;
+  if(result % 2 == 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
+
+
 5.	convert-boolean-values-to-strings-yes-or-no
+Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+Заполните метод, который принимает логическое значение и возвращает строку «Да» для true, или строку «Нет» для false.
+
+Исходный код
+function boolToWord( bool ){
+  //...
+}
+
+Решение
+function boolToWord( bool ){
+  if(bool === true) {
+    return 'Yes';
+  } else if (bool === false) {
+    return 'No';
+  }
+}
 */
