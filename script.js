@@ -126,9 +126,22 @@ sum(1, 2) = 3
 sum(1, 2, 3) = 6
 sum(1, 2, 3, 4) = 10
 
+Решение
+function sum() {
+	var sum = 0;
+	for (var i = 0; i < arguments.length; i++) {
+		sum += arguments[i];
+	}
+	return sum;
+}
+
+console.log(sum(5));
+console.log(sum(5, 3));
+console.log(sum(5, 3, 8, 7, 2));
+*/
 
 
-
+/*
 Задание 11
 Создайте объект Date для даты: 25 февраля 2015 года, 2
 часа 17 минут.
