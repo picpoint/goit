@@ -61,10 +61,19 @@ var arr = ['HTML', 'JavaScript', 'CSS'];
 // ... ваш код ...
 console.log( arrSorted ); // CSS, HTML, JavaScript
 console.log( arr ); // HTML, JavaScript, CSS (без изменений)
+*/
+/*
+Решение
+var arr = ['HTML', 'JavaScript', 'CSS'];
+var arrSort = arr;
+console.log(arr);
+console.log(arrSort.sort(1));
+*/
 
 
 
 
+/*
 Задание 3 (Random sort)
 Необходимо отсортировать массив в случайном порядке используя метод sort.
 var arr = [1, 2, 3, 4, 5];
