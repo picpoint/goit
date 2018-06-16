@@ -79,10 +79,33 @@ console.log(arrSort.sort(1));
 var arr = [1, 2, 3, 4, 5];
 arr.sort(ваша функция);
 console.log( arr ); // элементы в случайном порядке, например [3,5,1,2,4]
+*/
+
+var arr = [1, 2, 3, 4, 5];
+console.log(arr);
+
+/*
+var arr = [1, 2, 3, 4, 5];
+var mass = [];
+
+function funcSort(arr) {
+	var min = arr[0];
+	var max = arr[4];
+
+	for (var i = 0; i < arr.length; i++) {
+		var result = Math.floor(Math.random() * (max - min)) + min;
+		mass.push(result);
+	}
+	return mass;
+}
+
+console.log(funcSort(arr));
+*/
 
 
 
 
+/*
 Задание 4 (Object sort)
 Напишите код, который отсортирует массив объектов people по полю age.
 Например:
