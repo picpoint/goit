@@ -243,11 +243,28 @@ console.log(unique(strings));
 var arr = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
 console.log( anClean(arr) ); // 'воз,киборг,корсет' или 'ЗОВ,гробик,сектор'
 Из каждой группы анаграмм должно остаться только одно слово, не важно какое.
+*/
+var arr = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
+var mass = [], result = [];
+function anClean(arr) {
+	for (var i = 0; i < arr.length; i++) {
+		mass.push(arr[i].toLowerCase());
+
+		for (var x = 0; x < arr.length; x++) {
+			var param1 = arr[x].split('').reverse();
+			if (mass[i] != arr[x]) {
+				result.push(mass[i]);
+			}
+		}
+	}
+
+	return param1;
+}
+
+console.log(anClean(arr));
 
 
-
-
-
+/*
 Задание 8
 Напишите функцию toCamelCase(str), которая преобразует строки вида my-short-string
 в myShortString
