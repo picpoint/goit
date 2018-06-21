@@ -358,13 +358,19 @@ console.log(sum(5, 3, 8, 7, 2));
 
 
 /*
-Задание 11
++++Задание 11
 Создайте объект Date для даты: 25 февраля 2015 года, 2 часа 17 минут.
 Временная зона — местная. Выведите его на экран.
+*/
+/*
+var date = new Date(2015, 1, 24, 29, 17);
+console.log(date);
+*/
 
 
 
 
+/*
 http://www.codewars.com/kata/add-property-to-every-object-in-array
 http://www.codewars.com/kata/return-the-missing-element
 http://www.codewars.com/kata/find-your-villain-name
