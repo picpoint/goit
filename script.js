@@ -370,8 +370,39 @@ console.log(date);
 
 
 
+//CODEWARS
 /*
++++Задание 12
 http://www.codewars.com/kata/add-property-to-every-object-in-array
+Your task is to add a new property usersAnswer to every object in the array questions. The value of usersAnswer should be set to null.
+The solution should work for array of any length.
+Ваша задача - добавить новое свойство usersAnswer к каждому объекту в массиве вопросов. Значение usersAnswer должно быть равно null.
+Решение должно работать для массива любой длины.
+*/
+/*
+Решение
+var questions = [{
+	question: "What's the currency of the USA?",
+	choices: ["US dollar", "Ruble", "Horses", "Gold"],
+	corAnswer: 0
+}, {
+	question: "Where was the American Declaration of Independence signed?",
+	choices: ["Philadelphia", "At the bottom", "Frankie's Pub", "China"],
+	corAnswer: 0
+}];
+
+
+for (var i = 0; i < questions.length; i++) {
+	questions[i].usersAnswer = null;
+}
+
+console.log(questions);
+*/
+
+
+
+
+/*
 http://www.codewars.com/kata/return-the-missing-element
 http://www.codewars.com/kata/find-your-villain-name
 http://www.codewars.com/kata/use-reduce-to-calculate-the-sum-of-the-values-in-an-array
