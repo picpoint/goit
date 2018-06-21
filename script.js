@@ -244,28 +244,32 @@ var arr = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', '
 console.log( anClean(arr) ); // 'воз,киборг,корсет' или 'ЗОВ,гробик,сектор'
 Из каждой группы анаграмм должно остаться только одно слово, не важно какое.
 */
+/*
 var arr = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
 var mass = [], result = [];
+
 function anClean(arr) {
 	for (var i = 0; i < arr.length; i++) {
 		mass.push(arr[i].toLowerCase());
+		var subarrx = arr[i].split('').join('');
+		var subarrxrvrs = arr[i].split('').reverse().join('');
+		console.log(subarrx + ' - ' + subarrxrvrs);
 
-		for (var x = 0; x < arr.length; x++) {
-			var param1 = arr[x].split('').reverse();
-			if (mass[i] != arr[x]) {
-				result.push(mass[i]);
-			}
+		if (mass[i] != subarrx && mass[i] != subarrxrvrs) {
+			result.push(mass[i]);
 		}
 	}
-
-	return param1;
+	return result;
 }
 
 console.log(anClean(arr));
+*/
+
+
 
 
 /*
-Задание 8
++++Задание 8
 Напишите функцию toCamelCase(str), которая преобразует строки вида my-short-string
 в myShortString
 Дефисы удаляются, а все слова после них получают заглавную букву
@@ -273,11 +277,36 @@ console.log(anClean(arr));
 toCamelCase('background-color');  - backgroundColor
 toCamelCase('list-style-type'); - listStyleType
 toCamelCase('-webkit-transition'); WebkitTransition
+*/
+/*
+function toCamelCase(str) {
+	var result = str.split('-');
+	var out = '';
+
+	for (var i = 0; i < result.length; i++) {
+		if (result[i] == '') {
+			result.splice(result[i], 1);
+		}
+	}
+
+	for (var x = 0; x < result.length; x++) {
+		out += result[x].charAt(0).toUpperCase() + result[x].slice(1);
+	}
+
+	return out;
+}
+
+console.log(toCamelCase('background-color'));
+console.log(toCamelCase('list-style-type'));
+console.log(toCamelCase('-webkit-transition'));
+P.S. Еле еле сделал, но немного не точно, вместо "listStyleType", выдаёт "ListStyleType"
+*/
 
 
 
 
-Задание 9
+/*
++++Задание 9
 Код ниже получает из массива строк новый массив, содержащий их длины. Перепишите его: уберите цикл,
 используйте вместо него метод map.
 var arr = ['Есть', 'жизнь', 'на', 'Марсе'];
@@ -286,6 +315,18 @@ for (var i = 0; i < arr.length; i++) {
 arrLength[i] = arr[i].length;
 }
 console.log( arrLength ); // 4,5,2,5
+*/
+/*
+Решение
+var arr = ['Есть', 'жизнь', 'на', 'Марсе'];
+
+var result = arr.map(function (arr) {
+	return arr.length;
+});
+
+console.log(result);
+*/
+
 
 
 
