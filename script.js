@@ -403,8 +403,141 @@ console.log(questions);
 
 
 /*
++++Задание 13
 http://www.codewars.com/kata/return-the-missing-element
+Fellow code warrior, we need your help! We seem to have lost one of our array elements, and we need your help to retrieve it!
+Our array, superImportantArray, was supposed to contain all of the integers from 0 to 9 (in no particular order),
+but one of them seems to be missing.
+Write a function called getMissingElement that accepts an array of unique integers between 0 and 9 (inclusive),
+and returns the missing element.
+
+Помощник кодового воина, нам нужна ваша помощь! Кажется, мы потеряли один из наших элементов массива, и нам нужна ваша
+помощь, чтобы получить его! Предположительно, наш массив superImportantArray должен содержать все целые числа
+от 0 до 9 (в определенном порядке), но один из них, кажется, отсутствует. Напишите функцию, называемую
+getMissingElement, которая принимает массив уникальных целых чисел от 0 до 9 (включительно) и возвращает
+отсутствующий элемент.
+*/
+/*
+//Решение 1 - тут исходный массив меняется
+function getMissingElement(arr){
+	arr.sort();
+
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] != i) {
+			return i;
+		}
+	}
+}
+
+console.log(getMissingElement( [0, 5, 1, 3, 2, 9, 7, 6, 4] )); // returns 8
+console.log(getMissingElement( [9, 2, 4, 5, 7, 0, 8, 6, 1] )); // returns 3
+console.log(getMissingElement( [1, 3, 2, 4, 0, 5, 8, 7, 9] )); // returns 6
+*/
+/*
+Решение 2 - здесь исходный массив не меняется
+function getMissingElement(arr){
+	var result = [];
+
+	for (var x = 0; x < arr.length; x++) {
+		result.push(arr[x]);
+	}
+
+	result.sort();
+
+	for (var i = 0; i < result.length; i++) {
+		if (result[i] != i) {
+			return i;
+		}
+	}
+
+}
+
+console.log(getMissingElement( [0, 5, 1, 3, 2, 9, 7, 6, 4] )); // returns 8
+console.log(getMissingElement( [9, 2, 4, 5, 7, 0, 8, 6, 1] )); // returns 3
+console.log(getMissingElement( [1, 3, 2, 4, 0, 5, 8, 7, 9] )); // returns 6
+*/
+
+
+
+
+/*
++++Задание 14
 http://www.codewars.com/kata/find-your-villain-name
+Create a function, getVillainName, that returns a villain name based on the user's birthday.
+(The birthday will be passed to the function as a valid Date object, so for simplicity, there's no need
+to worry about converting strings to dates.)
+The first name will come from the month, and the last name will come from the last digit of the date.
+The returned value should be a string in the form of "First Name Last Name".
+For example, a birthday of November 18 would return "The Terrifying Teaspoon"
+
+Создайте функцию getVillainName, которая возвращает имя злодея, основанное на дне рождения пользователя.
+(День рождения будет передан функции как действительный объект Date, поэтому для простоты нет необходимости
+беспокоиться о преобразовании строк в даты.)
+Первое имя будет получено с месяца, а фамилия будет указана с последней цифры даты.
+Возвращаемое значение должно быть строкой в форме «Имя Фамилия».
+Например, день рождения 18 ноября вернет «Ужасную чайную ложку»,
+
+Решение
+var firstname = {
+	January: "The Evil",
+	February: "The Vile",
+	March: "The Cruel",
+	April: "The Trashy",
+	May: "The Despicable",
+	June: "The Embarrassing",
+	July: "The Disreputable",
+	August: "The Atrocious",
+	September: "The Twirling",
+	October: "The Orange",
+	November: "The Terrifying",
+	December: "The Awkward"
+};
+
+var lastname = {
+	0: "Mustache",
+	1: "Pickle",
+	2: "Hood Ornament",
+	3: "Raisin",
+	4: "Recycling Bin",
+	5: "Potato",
+	6: "Tomato",
+	7: "House Cat",
+	8: "Teaspoon",
+	9: "Laundry Basket"
+};
+
+function getVillainName(birthday){
+	birthday = birthday.split(' ');
+	var str = '';
+
+	var firstvalue = birthday[0];
+	var lastvalue = +birthday[1];
+
+	for (var key in firstname) {
+		if (key == firstvalue) {
+			str = firstname[key];
+		}
+	}
+
+	for (var key in lastname) {
+		if (key == lastvalue) {
+			str += ' ' +  lastname[key];
+		}
+	}
+
+	return str;
+}
+
+console.log(getVillainName('March 9'));
+P.S. Задание решил, но немного не понял почему в задании дата 18 ноября - возвращяет "The Terrifying Teaspoon"
+вместо "The Terrifying Pickle Teaspoon"
+В моим решении я не сделал учат даты с двумя цифрами а только с одной.
+*/
+
+
+
+
+/*
 http://www.codewars.com/kata/use-reduce-to-calculate-the-sum-of-the-values-in-an-array
 http://www.codewars.com/kata/take-a-ten-minute-walk
 */
