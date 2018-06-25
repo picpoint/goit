@@ -53,6 +53,8 @@ P.S. Если раскомментировать все три вызова од
 
 
 
+
+
 /*
 +++Задание 2 (Сортировка массива строк)
 Есть массив строк arr. Создайте массив arrSorted — из тех же элементов, но отсортированный.
@@ -69,6 +71,8 @@ var arrSort = arr;
 console.log(arr);
 console.log(arrSort.sort(1));
 */
+
+
 
 
 
@@ -172,6 +176,8 @@ console.log(objSort(people));
 
 
 
+
+
 /*
 +++Задание 5 (Проверка на палиндром)
 Палиндром - это строка которая читается с обоих сторон одинаково. Например: Анна, оно, А роза упала на лапу Азора.
@@ -205,6 +211,8 @@ console.log(isPal('123212'));
 
 
 
+
+
 /*
 +++Задание 6 (Уникальные элементы массива)
 Напишите функцию unique(arr), которая возвращает массив, содержащий только
@@ -230,6 +238,8 @@ function unique(arr) {
 
 console.log(unique(strings));
 */
+
+
 
 
 
@@ -264,6 +274,8 @@ function anClean(arr) {
 
 console.log(anClean(arr));
 */
+
+
 
 
 
@@ -305,6 +317,8 @@ P.S. Еле еле сделал, но немного не точно, вмест
 
 
 
+
+
 /*
 +++Задание 9
 Код ниже получает из массива строк новый массив, содержащий их длины. Перепишите его: уберите цикл,
@@ -326,6 +340,8 @@ var result = arr.map(function (arr) {
 
 console.log(result);
 */
+
+
 
 
 
@@ -357,6 +373,8 @@ console.log(sum(5, 3, 8, 7, 2));
 
 
 
+
+
 /*
 +++Задание 11
 Создайте объект Date для даты: 25 февраля 2015 года, 2 часа 17 минут.
@@ -366,6 +384,8 @@ console.log(sum(5, 3, 8, 7, 2));
 var date = new Date(2015, 1, 24, 29, 17);
 console.log(date);
 */
+
+
 
 
 
@@ -398,6 +418,8 @@ for (var i = 0; i < questions.length; i++) {
 
 console.log(questions);
 */
+
+
 
 
 
@@ -456,6 +478,8 @@ console.log(getMissingElement( [0, 5, 1, 3, 2, 9, 7, 6, 4] )); // returns 8
 console.log(getMissingElement( [9, 2, 4, 5, 7, 0, 8, 6, 1] )); // returns 3
 console.log(getMissingElement( [1, 3, 2, 4, 0, 5, 8, 7, 9] )); // returns 6
 */
+
+
 
 
 
@@ -537,7 +561,42 @@ P.S. Задание решил, но немного не понял почему
 
 
 
+
+
 /*
++++Задание 15
 http://www.codewars.com/kata/use-reduce-to-calculate-the-sum-of-the-values-in-an-array
+Make the sum() function return the sum of the values in the passed in array. Your solution must use the reduce()
+function of the built-in javascript Array object. If you're not familiar with reduce(), reading over the documentation may help.
+
+Сделать функцию sum () возвращать сумму значений в переданном массиве. В вашем решении должна использоваться функция
+reduce () встроенного объекта массива javascript. Если вы не знакомы с reduce (), чтение документации может помочь.
+*/
+/*
+Решение
+var arr1 = [1,2,3,4,5,6,7,8,9,10];
+var arr2 = [71,-548,12.3,83,-47,-1.7,-892,58,31415,2718,-38];
+
+function sum(array) {
+	var result = array.reduce(function (sum, current) {
+		return sum + current;
+	}, 0);
+
+	return result;
+}
+
+console.log(sum(arr1));
+console.log(sum(arr2));
+*/
+
+
+
+
+
+
+
+/*
+Задание 16
 http://www.codewars.com/kata/take-a-ten-minute-walk
+Данное задание я прочёл несколько раз, перевёл и прочёл снова и всё равно ничего не понял.
 */
