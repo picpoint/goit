@@ -28,6 +28,7 @@ ladder.showStep(); // 1
 		ladder.up().up().down().up().down().showStep(); // 1
 Такой подход называется «чейнинг» (chaining)
 */
+/*
 var ladder = {
 	step: 0,
 
@@ -46,7 +47,7 @@ var ladder = {
 
 ladder.up().up().down().up().down().showStep(); // 1
 //Подсказка ladder должен возвращать текущий объект
-
+*/
 
 
 
@@ -118,7 +119,7 @@ console.log( vasya.fullName ); // Александр Толстой
 
 
 /*
-Задание 4 (Object counter)
++++Задание 4 (Object counter)
 Добавить в конструктор Article:
 •	Подсчёт общего количества созданных объектов.
 •	Запоминание даты последнего созданного объекта.
@@ -136,4 +137,34 @@ new Article();
 Article.showStats(); // Всего: 2, Последняя: (дата)
 new Article();
 Article.showStats(); // Всего: 3, Последняя: (дата)
+*/
+/*
+Решение
+function Article() {
+	Article.count++;
+	this.date = new Date();
+}
+
+Article.count = 0;
+
+Article.showCount = function () {
+	return this.count;
+};
+
+Article.date = function () {
+	this.date = new Date();
+	return this.date;
+};
+
+new Article();
+new Article();
+new Article();
+
+Article.showStats = function () {
+	return 'Дата последнего созданного объекта ' + Article.date() + ' Количество объектов ' + Article.showCount();
+};
+
+//console.log(Article.showCount());   // Здесь выводится только количество объектов
+//console.log(Article.date());        // Здесь выводится дата последнего создания(не знаю правильно или нет)
+console.log(Article.showStats());     // Здесь же выводится и дата последнего объекта и количество созданных
 */
