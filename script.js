@@ -53,7 +53,7 @@ ladder.up().up().down().up().down().showStep(); // 1
 
 
 /*
-Задание 2 (Calculator)
++++Задание 2 (Calculator)
 Напишите конструктор Calculator, который создаёт расширяемые объекты-калькуляторы.
 Эта задача состоит из двух частей, которые можно решать одна за другой.
 Первый шаг задачи: вызов calculate(str) принимает строку, например «1 + 2», с жёстко заданным
@@ -88,7 +88,8 @@ console.log( result ); // 8
 •	Числа и операции могут состоять из нескольких символов. Между ними ровно один пробел.
 •	Предусмотрите обработку ошибок. Какая она должна быть – решите сами.
 */
-
+/*
+//Решение
 function Calculator() {
 
 	this.calculate = function (str) {
@@ -101,17 +102,33 @@ function Calculator() {
 				return +this.str[0] - +this.str[2];
 			}
 		}
-	}
+	};
+
+	this.addMethod = function (operand, a, b) {
+		if (operand == '*') {
+			return a * b;
+		}
+		if (operand == '/') {
+			return a / b;
+		}
+		if (operand == '**') {
+			return Math.pow(a, b);
+		}
+	};
 
 }
 
-/*
+
 var calc = new Calculator();
-console.log(calc.calculate('3 + 7'));
-console.log(calc.calculate('5 - 8'));
-*/
+console.log(calc.calculate('7 + 2'));
+console.log(calc.calculate('9 - 2'));
+Первое решение, вроде всё нормально.
 
 var powerCalc = new Calculator();
+console.log(powerCalc.addMethod('/', 25, 5));
+Второе решение задачи сделал немного неправильно, единственное НО которое меня ввело в ступор, это то
+что данный метод я сделал без this и всё заработало а с this почему то не работает
+*/
 
 
 
@@ -142,8 +159,13 @@ console.log( vasya.fullName ); // Александр Толстой
 Лишнее дублирование здесь ни к чему.
 */
 
+function User(fullname) {
+	this.fullname = fullname.split(' ');
+	return fullname;
+}
 
-
+var vasya = new User('Сашка Лермонтов');
+console.log(vasya.fullname);
 
 
 /*
