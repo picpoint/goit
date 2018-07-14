@@ -3,7 +3,7 @@
 */
 
 /*
-Задание 1 (Chaining)
++++Задание 1 (Chaining)
 Есть объект ladder
 
 var ladder = {
@@ -29,25 +29,35 @@ ladder.showStep(); // 1
 Такой подход называется «чейнинг» (chaining)
 */
 /*
+Решение
 var ladder = {
 	step: 0,
 
 	up: function() { // вверх по лестнице
 		this.step++;
+		return this;
 	},
 
 	down: function() { // вниз по лестнице
 		this.step--;
+		return this;
 	},
 
 	showStep: function() { // вывести текущую ступеньку
 		console.log(this.step);
+		return this;
 	}
 };
 
 ladder.up().up().down().up().down().showStep(); // 1
 //Подсказка ladder должен возвращать текущий объект
+Решение состоит в том, чтобы каждый раз возвращать текущий объект.
+Это делается добавлением return this в конце каждого метода:
+Я долго и упорно думал, пробовал различные вариации, но блин так и не догадался, что текущий метод можно
+вернуть просто вернув return this;
+Решение подсмотрел((((
 */
+
 
 
 
@@ -135,7 +145,7 @@ console.log(powerCalc.addMethod('/', 25, 5));
 
 
 /*
-Задание 3 (get/set свойства)
++++Задание 3 (get/set свойства)
 У вас есть объект User, который хранит имя и фамилию в свойстве this.fullName:
 function User(fullName) {
 	this.fullName = fullName;
@@ -158,14 +168,43 @@ console.log( vasya.fullName ); // Александр Толстой
 Важно: в этой задаче fullName должно остаться свойством, а firstName/lastName — реализованы через get/set.
 Лишнее дублирование здесь ни к чему.
 */
-
+/*
+Решение
 function User(fullname) {
 	this.fullname = fullname.split(' ');
-	return fullname;
+	this.firstName = this.fullname[0];
+	this.lastName = this.fullname[1];
+
+	Object.defineProperty(this, 'fullName', {
+
+		get: function () {
+			return this.firstName + ' ' + this.lastName;
+		},
+
+		set: function (value) {
+			this.fullname = fullname.split(' ');
+			this.firstName = this.fullname[0];
+			this.lastName = this.fullname[1];
+		}
+	});
 }
 
-var vasya = new User('Сашка Лермонтов');
-console.log(vasya.fullname);
+var vasya = new User('Михаил Лермонтов');
+console.log(vasya.fullName);
+
+vasya.firstName = 'Сергей';
+console.log(vasya.fullName);
+
+vasya.lastName = 'Крылов';
+console.log(vasya.fullName);
+
+vasya.firstName = 'Александр';
+console.log(vasya.fullName);
+Решил задачу, немного подсмотрел в принцип написания геттеров/сеттеров
+*/
+
+
+
 
 
 /*
