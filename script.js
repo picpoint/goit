@@ -106,7 +106,7 @@ console.log(applyAll(mul, 2, 3, 4));
 
 
 /*
-Задание 3
++++Задание 3
 http://learn.javascript.ru/decorators#логирующий-декоратор-много-аргументов
 Логирующий декоратор (много аргументов)
 
@@ -135,13 +135,40 @@ for (var i = 0; i < log.length; i++) {
 	alert( 'Лог:' + args.join() ); // "Лог:1,2", "Лог:4,5"
 }
 */
+/*
+function work(a, b) {
+	console.log( a + b ); // work - произвольная функция
+}
 
+function makeLogging(f, log) {
+
+	function wrapper() {
+		log.push([].slice.call(arguments));
+		return f.apply(null, arguments)
+	}
+	return wrapper;
+
+}
+
+var log = [];
+work = makeLogging(work, log);
+
+work(1, 2); // 3
+work(4, 5); // 9
+
+for (var i = 0; i < log.length; i++) {
+	var args = log[i]; // массив из аргументов i-го вызова
+	console.log( 'Лог:' + args.join() ); // "Лог:1,2", "Лог:4,5"
+}
+Решение подсмотрел
+*/
 
 
 
 
 
 /*
+Задание 4
 http://learn.javascript.ru/decorators#кеширующий-декоратор
 */
 
@@ -149,8 +176,23 @@ http://learn.javascript.ru/decorators#кеширующий-декоратор
 
 
 
-
 /*
++++Задание 5
 Codewars
 http://www.codewars.com/kata/unpacking-arguments
+You must create a function, spread, that takes a function and a list of arguments to be applied to that function.
+You must make this function return the result of calling the given function/lambda with the given arguments.
+Вы должны создать функцию, spread, которая принимает функцию и список аргументов, которые будут применены к этой функции.
+Вы должны заставить эту функцию вернуть результат вызова данной функции / лямбда с данными аргументами.
+
+Например:
+spread(someFunction, [1, true, "Foo", "bar"] )
+// is the same as...
+someFunction(1, true, "Foo", "bar")
+*/
+/*
+Решение
+function spread(func, args) {
+	return func.apply(null, args);
+}
 */
