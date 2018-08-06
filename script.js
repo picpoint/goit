@@ -322,7 +322,34 @@ console.log(descendingOrder(1254859723)); // 9875543221
 /*
 4.	complete-the-pattern-number-10-parallelogram
 http://www.codewars.com/kata/complete-the-pattern-number-10-parallelogram
+You have to write a function pattern which returns the following Pattern(See Examples)
+upto n rows, where n is parameter.
+####Rules/Note:
+If the Argument is 0 or a Negative Integer then it should return "" i.e. empty string.
+The length of each line = (2n-1).
+Range of n is (-∞,100]
 
+Вам нужно написать шаблон функции, который возвращает следующий шаблон (см. Примеры) до n строк, где n - параметр.
+#### Правила / Примечание: Если аргумент равен 0 или отрицательному целому числу,
+тогда он должен возвращать "" т.е. пустую строку. Длина каждой линии = (2n-1). Диапазон n равен (-∞, 100)
+*/
+
+function pattern(n) {
+	var output = "";
+	var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+	for (var i = 1; i < n + 1; i++) {
+		output += i;
+	}
+	return output;
+}
+
+console.log(pattern(15));
+
+
+
+
+
+/*
 5.	find-duplicates
 http://www.codewars.com/kata/find-duplicates
 
