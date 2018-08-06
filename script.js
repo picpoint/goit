@@ -182,41 +182,172 @@ console.log(typeOfArguments(x));
 
 
 /*
-Задание 7
++++Задание 7
 Write a function suffle(arr) to shuffle an array.
+*/
+/*
+Решение
+function shuffleArray(arr) {
+
+	function sortNum(a, b) {
+		var rnd = Math.floor(Math.random() * arr.length);
+		for (var i = 0; i < arr.length; i++) {
+			if (a < b) return rnd;
+		}
+	}
+
+	return arr.sort(sortNum);
+
+}
+
+console.log(shuffleArray([1, 2, 3, 4, 5, 6, 7]));
+console.log(shuffleArray(['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь']));
 */
 
 
 
 
+
+
 /*
-Задание 8 (Уникальные css классы)
-Имеется массив css классов со старницы.
++++Задание 8 (Уникальные css классы)
+Имеется массив css классов.
 var arr = ['link', 'menu', 'menu__item', 'menu__item', 'header', 'link', 'footer', 'sidebar', 'link' ... ];
 Необходимо из этого массива получить массив с уникальными именами классов (без повторений) отсортированный по
 частоте использования (наиболее часто используемые - впереди).
 Если классы используются одинаковое количество раз - между ними не важно какой будет первее.
 result = ['link', 'menu__item', 'menu', 'header', 'footer', 'sidebar', ... ];
 */
+/*
+Решение
+function cssArray(arr) {
+	var mass = [];
+	for (var i = 0; i < arr.length; i++) {
+		if (mass.indexOf(arr[i]) == -1) {
+			mass.push(arr[i]);
+		}
+	}
+	return mass;
+}
+
+console.log(cssArray(['link', 'menu', 'menu__item', 'menu__item', 'header', 'link', 'footer', 'sidebar', 'link']));
+Решение чуть подсмотрел
+*/
+
+
 
 
 
 
 /*
 Codewars 7q
-1.	more-than-one-way-to-call-a-function-or-skin-a-cat
-2.	case-swapping
-3.	descending-order
++++1.	more-than-one-way-to-call-a-function-or-skin-a-cat
+http://www.codewars.com/kata/more-than-one-way-to-call-a-function-or-skin-a-cat
+*/
+/*
+Решение
+function sum(a, b) {
+	return a + b || function (b) {
+		return a + b;
+	}
+}
+
+console.log(sum(3, 2));
+console.log(sum(3)(3));
+P.S. такой момент, на кодворсе, указано в тестах следующее
+Test.expect(sum(2,3), 5);
+Test.expect(sum(3)(3), 5);
+Но как я понимаю  sum(3)(3), 5 - это не правильно, если сам правлю тест на sum(3)(3), 6 то тест проходит
+*/
+
+
+
+
+
+/*
++++2.	case-swapping
+http://www.codewars.com/kata/case-swapping
+*/
+/*
+Решение
+function swap(str) {
+	var arr = str.split('');
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] === arr[i].toUpperCase()) {
+			arr[i] = arr[i].toLowerCase();
+		} else {
+			arr[i] = arr[i].toUpperCase();
+		}
+	}
+	return arr.join('');
+}
+
+console.log(swap('CodeWars')); // cODEwARS
+console.log(swap('abc')); // ABC
+console.log(swap('ABC')); // abc
+console.log(swap('HelloWorld')); // hELLOwORLD
+console.log(swap('H_E_l-l_0 WO|||Rld')); // h_e_L-L_0 wo|||rLD
+*/
+
+
+
+
+
+
+/*
++++3.	descending-order
+http://www.codewars.com/kata/descending-order
+Your task is to make a function that can take any non-negative integer as a argument and return it with its
+digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+Ваша задача - создать функцию, которая может принимать любое неотрицательное целое число в качестве аргумента
+и возвращать его с его цифрами в порядке убывания.
+По существу, переставьте цифры, чтобы создать максимально возможное число.
+*/
+/*
+Решение
+function descendingOrder(n) {
+	return +(n + '').split('').sort().reverse().join('');
+}
+
+console.log(descendingOrder(21445)); // 54421
+console.log(descendingOrder(145263)); // 654321
+console.log(descendingOrder(1254859723)); // 9875543221
+*/
+
+
+
+
+
+
+/*
 4.	complete-the-pattern-number-10-parallelogram
+http://www.codewars.com/kata/complete-the-pattern-number-10-parallelogram
+
 5.	find-duplicates
+http://www.codewars.com/kata/find-duplicates
+
 6.	gradually-adding-parameters
+http://www.codewars.com/kata/gradually-adding-parameters
+
 7.	reverseit-1
+http://www.codewars.com/kata/reverseit-1
+
 8.	basic-js-calculating-averages
+http://www.codewars.com/kata/basic-js-calculating-averages
+
 
 Codewars 6q
 1.	complete-fibonacci-series
+http://www.codewars.com/kata/complete-fibonacci-series
+
 2.	detect-pangram
+http://www.codewars.com/kata/detect-pangram
+
 3.	multiples-of-3-and-5
+
 4.	count-characters-in-your-string
+http://www.codewars.com/kata/count-characters-in-your-string
+
 5.	typer-dot-js
+http://www.codewars.com/kata/typer-dot-js
 */
