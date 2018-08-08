@@ -159,7 +159,7 @@ console.log(longestString('Web Development Tutorial'));
 
 
 /*
-++Задание 6
++++Задание 6
 Write a JavaScript function which accepts an argument and returns the type. Note: There are six possible values
 that typeof returns: object, boolean, function, number, string, and undefined.
 */
@@ -333,7 +333,7 @@ Range of n is (-∞,100]
 #### Правила / Примечание: Если аргумент равен 0 или отрицательному целому числу,
 тогда он должен возвращать "" т.е. пустую строку. Длина каждой линии = (2n-1). Диапазон n равен (-∞, 100)
 */
-
+/*
 function pattern(n) {
 	var output = "";
 	var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -347,25 +347,163 @@ function pattern(n) {
 }
 
 console.log(pattern(15));
+*/
+
+
+
+
+/*
++++5.	find-duplicates
+http://www.codewars.com/kata/find-duplicates
+Given an array, find the duplicates in that array, and return a new array of those duplicates.
+The elements of the returned array should appear in the order when they first appeared as duplicates.
+Note: numbers and their corresponding string representations should not be treated as duplicates (i.e., '1' !== 1).
+Учитывая массив, найдите дубликаты в этом массиве и верните новый массив этих дубликатов.
+Элементы возвращаемого массива должны появляться в том порядке, в котором они сначала появляются как дубликаты.
+Примечание: номера и их соответствующие строковые представления не должны рассматриваться как дубликаты (т. Е. '1'! == 1).
+*/
+/*
+Решение
+function duplicate(arr) {
+	var mass = [];
+	var res = [];
+
+	for (var i = 0; i < arr.length; i++) {
+		if (typeof(arr[i]) === 'number') {
+			if (mass.indexOf(arr[i]) === -1) {
+				mass.push(arr[i]);
+			} else {
+				if (res.indexOf(arr[i]) === -1)
+				res.push(arr[i]);
+			}
+		}
+	}
+	return res;
+
+}
+
+console.log(duplicate([1, 2, 4, 4, 3, 3, 1, 5, 3, '5'])); // [4, 3, 1]
+console.log(duplicate([0, 1, 2, 3, 4, 5])); // []
+console.log(duplicate(['1', '2', 3, 4, '5'])); []
+P.S. Решил, работает вроде бы, но вот на кодверсе по тестам что то выдаёт пару ошибок
+*/
 
 
 
 
 
 /*
-5.	find-duplicates
-http://www.codewars.com/kata/find-duplicates
-
-6.	gradually-adding-parameters
++++6.	gradually-adding-parameters
 http://www.codewars.com/kata/gradually-adding-parameters
+This kata is all about adding numbers.
+You will create a function named add. This function will return the sum of all the arguments. Sounds easy, doesn't it??
+Well here's the twist. The inputs will gradually increase with their index as parameter to the function.
+Эта ката - это добавление чисел. Вы создадите функцию с именем add. Эта функция вернет сумму всех аргументов.
+Звучит просто, не так ли? Ну вот и твист. Входы будут постепенно увеличиваться с индексом в качестве параметра функции.
+*/
+/*
+Решение
+function add() {
+	if (arguments == undefined) {
+		return 0;
+	}
+	var count = 0;
+	var result = 0;
+	for (var i = 0; i < arguments.length; i++) {
+		result += arguments[i] * (++count);
+	}
 
-7.	reverseit-1
+	return result;
+}
+
+console.log(add(3, 4, 5));  //returns ( 3 * 1 ) + ( 4 * 2 ) + ( 5 * 3 ) = 26
+console.log(add());  //=> 0
+console.log(add(1, 2, 3));  //=> 14
+console.log(add(1, 4, -5, 5));  //=> 14
+*/
+
+
+
+
+
+/*
++++7.	reverseit-1
 http://www.codewars.com/kata/reverseit-1
+You have to create a function named reverseIt.
+Write your function so that in the case a string or a number is passed in as the data,
+you will return the data in reverse order. If the data is any other type, return it as it is.
+Examples of inputs and subsequent outputs:
+Вы должны создать функцию с именем reverseIt. Напишите свою функцию так, чтобы в случае передачи
+строки или числа в качестве данных вы вернете данные в обратном порядке.
+Если данные представляют собой любой другой тип, верните его как есть.
+Примеры входов и последующих выходов:
+"Hello" -> "olleH"
+"314159" -> "951413"
+[1,2,3] -> [1,2,3]
+*/
+/*
+Решение
+function reverseIt(data) {
+	if (typeof data === 'string') {
+		return data.split('').reverse().join('');
+	}
+	if (typeof data === 'number') {
+		return +(data + '').split('').reverse().join('');
+	}
+	return data;
+}
 
-8.	basic-js-calculating-averages
+console.log(reverseIt('Hello'));
+console.log(reverseIt(314159));
+console.log(reverseIt([1,2,3]));
+*/
+
+
+
+
+
+
+/*
++++8.	basic-js-calculating-averages
 http://www.codewars.com/kata/basic-js-calculating-averages
+Let's build a calculator that can calculate the average for an arbitrary number of arguments.
+The test expects you to provide a Calculator object with an average method:
+Calculator.average()
+The test also expects that when you pass no arguments, it returns 0. The arguments are expected to be integers.
+It expects Calculator.average(3,4,5) to return 4.
+Давайте построим калькулятор, который может вычислить среднее значение для произвольного количества аргументов.
+Тест ожидает, что вы предоставите объект Calculator со средним методом: Calculator.average ()
+Тест также ожидает, что когда вы не передадите никаких аргументов, он вернет 0.
+Ожидается, что аргументы будут целыми. Он ожидает, что Calculator.average (3,4,5) вернется 4.
+*/
+/*
+Решение
+var Calculator = {
+	average: function () {
+		var result = 0;
+		if (arguments == undefined) {
+			return 0;
+		}
+
+		for (var i = 0; i < arguments.length; i++) {
+			result += arguments[i] / arguments.length;
+		}
+		return result;
+	}
+};
+
+console.log(Calculator.average(3, 4, 5));
+console.log(Calculator.average(7, 5, 8, 3, 9));
+console.log(Calculator.average(5, 5, 5, 5, 5));
+P.S. Считает правильно, но тест на кодверсе выдаёт Longer test - Expected: 5.769230769230769, instead got: 5.76923076923077
+Честно, аж смешно
+*/
 
 
+
+
+
+/*
 Codewars 6q
 1.	complete-fibonacci-series
 http://www.codewars.com/kata/complete-fibonacci-series
