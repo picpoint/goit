@@ -637,6 +637,7 @@ What if the string is empty ? Then the result should be empty object literal { }
 Если у вас есть строка, подобная этой aba, тогда результат должен быть {'a': 2, 'b': 1}
 Что делать, если строка пуста? Тогда результатом должен быть пустой литерал объекта {}
 */
+
 function count (string) {
 	var str = string.split('');
 
