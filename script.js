@@ -241,6 +241,7 @@ console.log(cssArray(['link', 'menu', 'menu__item', 'menu__item', 'header', 'lin
 
 /*
 Codewars 7q
+
 +++1.	more-than-one-way-to-call-a-function-or-skin-a-cat
 http://www.codewars.com/kata/more-than-one-way-to-call-a-function-or-skin-a-cat
 */
@@ -504,18 +505,152 @@ P.S. Считает правильно, но тест на кодверсе вы
 
 
 /*
-Codewars 6q
++++Codewars 6q
 1.	complete-fibonacci-series
 http://www.codewars.com/kata/complete-fibonacci-series
+The function 'fibonacci' should return an array of fibonacci numbers. The function takes a number as an
+argument to decide how many no. of elements to produce.
+If the argument is less than or equal to 0 then return empty array
+Example:
+fibonacci(4); // should return [0,1,1,2]
+fibonacci(-1); // should return []
+Функция «fibonacci» должна возвращать массив чисел фибоначчи. Функция принимает число как аргумент,
+чтобы решить, сколько нет. элементов для производства. Если аргумент меньше или равен 0, возвращаем пустой массив.
+Пример:
+fibonacci (4); // должен возвращать [0,1,1,2]
+fibonacci (-1); // должен возвращать []
+*/
+/*
+Решение
+function fib(n) {
+	var a = 0;
+	var b = 1;
+	var c;
+	var mass = [];
+	if (n == 0) {
+		return [0];
+	}
+	if (n == 1) {
+		return [0, 1];
+	}
+	for (var i = 2; i < n; i++) {
+		c = a + b;
+		a = b;
+		b = c;
+		mass.push(c);
+	}
+	return mass;
+}
 
-2.	detect-pangram
+console.log(fib(8));  // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
+										  // 1, 2, 3, 4, 5, 6, 7,  8,  9, 10, 11, 12
+Задача решена, но с подглядками и немного коряво
+*/
+
+
+
+
+
+
+/*
++++2.	detect-pangram
 http://www.codewars.com/kata/detect-pangram
+A pangram is a sentence that contains every single letter of the alphabet at least once.
+For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the
+letters A-Z at least once (case is irrelevant).
+Given a string, detect whether or not it is a pangram. Return True if it is, False if not.
+Ignore numbers and punctuation.
+Панграма - это предложение, содержащее каждую букву алфавита хотя бы один раз. Например, предложение 
+«Быстрая коричневая лиса прыгает по ленивой собаке» - это панграма, потому что она использует буквы A-Z хотя 
+бы один раз (случай не имеет значения). 
+Учитывая строку, определите, является ли она панграмой. Верните True, если это так, False, если нет. 
+Игнорировать числа и знаки препинания.
+*/
+/*
+Решение
+function isPangram(string) {
+	var arr = [];
+	var count = 0;
+	var alphabetEn = ['a', 'b', 'c', 'd', 'e',
+									'f', 'g', 'h', 'i', 'j',
+									'k', 'l',	'm', 'n', 'o',
+									'p', 'q', 'r', 's', 't',
+									'u', 'v', 'w', 'x',	'y', 'z'];
 
-3.	multiples-of-3-and-5
+	var alphabetRu = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й',
+										'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф',
+										'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
 
+	var mass = string.toLowerCase().split(' ').join('').split('').sort();
+
+
+	for (var i = 0; i < mass.length; i++) {
+		if (arr.indexOf(mass[i]) === -1) {
+			arr.push(mass[i]);
+		}
+	}
+
+	for (var x = 0; x < alphabetEn.length; x++) {
+		if (arr[x] === alphabetEn[x]) {
+			console.log(arr[x] + ' == ' + alphabetEn[x]);
+			count++;
+		} else {
+			console.log(arr[x] + ' != ' + alphabetEn[x]);
+		}
+	}
+
+	if (count === alphabetEn.length) {
+		return true;
+	} else {
+		return false;
+	}
+
+}
+
+console.log(isPangram('The quick brown fox jumps over the lazy dog'));
+console.log(isPangram('Six big juicy steaks sizzled in a pan as five workmen left the quarry'));
+console.log(isPangram('is not a pangramm words'));
+//console.log(isPangram('Эй цирюльникъ ёжик выстриги да щетину ряхи сбрей феном вошь за печь гони'));
+console.log(isPangram('This is not a pangram'));
+P.S. Задачу решил, хотел написать панграмм для русского алфавита, но т.к. в юникод буква ё идет не по порядку,
+решил пока не замарачиваться. Русский панграмм пока не получился.
+*/
+
+
+
+
+/*
+3.	multiples-of-3-and-5 - данной задачи на кодворсе  не обнаружено
+*/
+
+
+
+
+
+/*
 4.	count-characters-in-your-string
 http://www.codewars.com/kata/count-characters-in-your-string
+The main idea is to count all the occuring characters(UTF-8) in string. If you have string like this aba then
+the result should be { 'a': 2, 'b': 1 }
+What if the string is empty ? Then the result should be empty object literal { }
+Основная идея состоит в том, чтобы подсчитать все возникающие символы (UTF-8) в строке.
+Если у вас есть строка, подобная этой aba, тогда результат должен быть {'a': 2, 'b': 1}
+Что делать, если строка пуста? Тогда результатом должен быть пустой литерал объекта {}
+*/
+function count (string) {
+	var str = string.split('');
 
+	return str;
+}
+
+console.log(count('aba')); // {'a': 2, 'b': 1}
+
+
+
+
+
+
+/*
 5.	typer-dot-js
 http://www.codewars.com/kata/typer-dot-js
 */
