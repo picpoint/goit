@@ -628,7 +628,7 @@ P.S. Задачу решил, хотел написать панграмм дл�
 
 
 /*
-4.	count-characters-in-your-string
+---4.	count-characters-in-your-string
 http://www.codewars.com/kata/count-characters-in-your-string
 The main idea is to count all the occuring characters(UTF-8) in string. If you have string like this aba then
 the result should be { 'a': 2, 'b': 1 }
@@ -637,14 +637,35 @@ What if the string is empty ? Then the result should be empty object literal { }
 Если у вас есть строка, подобная этой aba, тогда результат должен быть {'a': 2, 'b': 1}
 Что делать, если строка пуста? Тогда результатом должен быть пустой литерал объекта {}
 */
-
+/*
+Задача не решена
 function count (string) {
-	var str = string.split('');
+	var emptyObj = {};
+	var mass = [];
+	var arr = string.split('');
+	var count = 1;
 
-	return str;
+	if (string == '') {
+		return emptyObj;
+	}
+
+	for (var i = 0; i < arr.length; i++) {
+		if (mass.indexOf(arr[i]) == -1) {
+			var key = mass.push(arr[i]);
+			mass[key] = count;
+		}
+
+		if (mass.indexOf(arr[i]) >= 0) {
+			//key = mass.push(arr[i]);
+			mass[key] = count++;
+		}
+	}
+
+	return mass;
 }
 
 console.log(count('aba')); // {'a': 2, 'b': 1}
+*/
 
 
 
@@ -652,6 +673,6 @@ console.log(count('aba')); // {'a': 2, 'b': 1}
 
 
 /*
-5.	typer-dot-js
+---5.	typer-dot-js
 http://www.codewars.com/kata/typer-dot-js
 */
