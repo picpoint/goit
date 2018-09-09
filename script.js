@@ -451,13 +451,22 @@ function Mashine(power) {
 	};
 }
 
+
 function Fridge(power) {
 	Mashine.apply(this, arguments);
 	var food = [];
 
 	this.addFood = function (item) {
+		if (this.__enabled === false) {
+			throw new Error('Добавить еду нельзя, холодильник выключен');
+		}
+
 		for (var i = 0; i < arguments.length; i++) {
 			food.push(arguments[i]);
+		}
+
+		if (food.length > power/100) {
+			throw new Error('Нельзя добавить еды больше чем - ' + power/100);
 		}
 	};
 
@@ -467,6 +476,8 @@ function Fridge(power) {
 }
 
 var frdg = new Fridge(500);
+frdg.onSwitch();
 frdg.addFood('apple', 'ananas', 'kokos');
 frdg.addFood('strawbery', 'chery');
+//frdg.addFood('semki');
 console.log(frdg.getFood());
