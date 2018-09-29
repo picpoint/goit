@@ -302,6 +302,70 @@ P.S. отвечаю на вопрос задачи - "При создании д
 при создании из конструктора
 */
 
+/*
+function Animal(name) {
+	this.name = name;
+	this.speed = 0;
+}
+
+Animal.prototype.run = function (speed) {
+	this.speed += speed;
+	console.log('скорость ' + this.speed);
+};
+
+Animal.prototype.stop = function () {
+	this.speed = 0;
+	console.log(this.name + ' стоит ' + 'скорость ' + this.speed);
+};
 
 
+function Rabbit(name) {
+	this.name = name;
+	this.speed = 0;
+}
 
+Rabbit.prototype = Object.create(Animal.prototype);
+
+Rabbit.prototype.jump = function () {
+	this.speed++;
+	console.log(this.name + ' прыгает' + ' скорость ' + this.speed);
+};
+
+
+var krolik = new Rabbit('pushok');
+krolik.run(5);
+krolik.run(7);
+krolik.stop();
+*/
+
+/*
+function Animal(name) {
+	this.name = name;
+	this.speed = 0;
+}
+
+function Rabbit(name) {
+	Animal.apply(this, arguments);
+}
+
+var krol = new Rabbit('bunny');
+console.log(krol.name);
+console.log(krol.speed);
+*/
+
+/*
+function Animal() {
+
+}
+
+Rabbit.prototype = Object.create(Animal.prototype);
+
+function Rabbit() {
+
+}
+
+var krolik = new Rabbit();
+console.log(krolik instanceof Rabbit);
+console.log(krolik instanceof Animal);
+console.log(krolik instanceof Object);
+*/
