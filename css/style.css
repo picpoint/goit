@@ -1,0 +1,6 @@
+.tbl {
+  margin: 50px;
+}
+.tbl tr td {
+  border: 1px solid #000000;
+}

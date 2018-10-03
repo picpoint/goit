@@ -51,3 +51,34 @@ for (var i = 0; i < elem.length; i++) {
 }
 */
 
+
+/*
+Задание 3
+*/
+/*
+Решение 1 - быдлокодное
+var elem1 = document.body.firstElementChild.firstElementChild.children[0].children[0];
+elem1.style.backgroundColor = 'cyan';
+
+var elem2 = document.body.firstElementChild.firstElementChild.children[1].children[1];
+elem2.style.backgroundColor = 'cyan';
+
+var elem3 = document.body.firstElementChild.firstElementChild.children[2].children[2];
+elem3.style.backgroundColor = 'cyan';
+
+var elem4 = document.body.firstElementChild.firstElementChild.children[3].children[3];
+elem4.style.backgroundColor = 'cyan';
+
+var elem5 = document.body.firstElementChild.firstElementChild.children[4].children[4];
+elem5.style.backgroundColor = 'cyan';
+*/
+
+//Решение2
+
+var elem = document.body.firstElementChild.firstElementChild.firstElementChild;
+elem.style.backgroundColor = 'cyan';
+console.log(elem);
+
+
+
+
