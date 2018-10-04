@@ -71,14 +71,18 @@ elem4.style.backgroundColor = 'cyan';
 
 var elem5 = document.body.firstElementChild.firstElementChild.children[4].children[4];
 elem5.style.backgroundColor = 'cyan';
-*/
+
 
 //Решение2
+//Было подсмотренно
 
-var elem = document.body.firstElementChild.firstElementChild.firstElementChild;
-elem.style.backgroundColor = 'cyan';
-console.log(elem);
+var table = document.body.children[0];
 
+for (var i = 0; i < table.rows.length; i++) {
+	var row = table.rows[i];
+	console.log(row.cells[i].style.backgroundColor = 'cyan');
+}
+*/
 
 
 
